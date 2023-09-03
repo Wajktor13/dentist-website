@@ -10,8 +10,9 @@ import { Subscription, interval } from 'rxjs';
 
 export class AboutMeComponent implements OnInit, OnDestroy {
     public imagesUrls: string[] = ["assets/clinic/1.jpg", "assets/clinic/2.jpg", "assets/clinic/3.jpg", "assets/clinic/4.jpg", "assets/clinic/5.jpg"];
+    public images: HTMLImageElement[] = [];
     public currentImageIndex: number = 0;
-    private intervalTime: number = 4000;
+    private intervalTime: number = 4500;
     private changeBackgroundSub: Subscription | null = null;
 
     public ngOnInit(): void {
@@ -32,7 +33,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
         for(let i=0; i < this.imagesUrls.length; i++){
             let img = new Image();
             img.src = this.imagesUrls[i];
-            console.log('laoded')
+            this.images.push(img);
         }
     }
 }
