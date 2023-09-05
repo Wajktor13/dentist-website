@@ -9,7 +9,7 @@ import { Subscription, interval } from 'rxjs';
 })
 
 export class AboutMeComponent implements OnInit, OnDestroy {
-    public imagesUrls: string[] = ["assets/clinic/1.jpg", "assets/clinic/2.jpg", "assets/clinic/3.jpg", "assets/clinic/4.jpg", "assets/clinic/5.jpg"];
+    public imagesUrls: string[] = ["assets/clinic/0.jpg", "assets/clinic/1.jpg", "assets/clinic/2.jpg", "assets/clinic/3.jpg", "assets/clinic/4.jpg"];
     public images: HTMLImageElement[] = [];
     public currentImageIndex: number = 0;
     private intervalTime: number = 4500;
