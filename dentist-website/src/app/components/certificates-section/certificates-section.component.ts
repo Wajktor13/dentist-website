@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CertificatesSectionComponent implements OnInit {
     private certsDivs: HTMLDivElement[] = [];
     private currCertIndex: number = 1;
-    private transitionTimeSeconds: number = 0.6;
+    private transitionTimeSeconds: number = 0.65;
     private inTransition: boolean = false;
 
     public ngOnInit(): void {
@@ -35,7 +35,6 @@ export class CertificatesSectionComponent implements OnInit {
 
         this.performTransition(prevDiv, currDiv, -100);
     }
-
 
     public slideRight(): void {
         if (this.inTransition){
