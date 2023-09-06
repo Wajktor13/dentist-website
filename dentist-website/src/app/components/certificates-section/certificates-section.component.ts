@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class CertificatesSectionComponent implements OnInit {
     private certsDivs: HTMLDivElement[] = [];
-    private currCertIndex: number = 1;
+    private currCertIndex: number = 5;
     private transitionTimeSeconds: number = 0.65;
     private inTransition: boolean = false;
 
