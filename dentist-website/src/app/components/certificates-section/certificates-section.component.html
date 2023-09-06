@@ -1,61 +1,81 @@
 <section class="flex flex-col justify-center items-center bg-[#a90269]">
     <h1 class="text-white text-8xl lg:text-[9vw] font-bold text-center">CERTYFIKATY</h1>
 
-    <div class="relative h-[120vw] w-[95vw] max-w-[600px] max-h-[800px] m-auto mb-40 flex justify-center items-center">
+    <div class="mb-40">
 
-        <button class="select-none text-8xl opacity-50 hover:opacity-100 p-2 m-0 transition-transform duration-300 hover:scale-125 h-full sm:text-5xl text-white" (click)="slideLeft()"><</button>
+        <div class="relative h-[120vw] w-[95vw] max-w-[600px] max-h-[700px] m-auto flex justify-center items-center mb-0">
 
-        <div class="relative flex justify-center items-center overflow-hidden h-full w-full">
+            <button class="select-none text-8xl opacity-50 hover:opacity-100 p-2 m-0 transition-transform duration-500 hover:scale-125 h-full sm:text-5xl text-white" (click)="slideLeft(0.65)"><</button>
 
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/0.jpg" alt="certyfikat">
+            <div class="relative flex justify-center items-center overflow-hidden h-full w-full">
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/0.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/1.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/2.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/3.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/4.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]"  style="z-index: 10;">
+                    <img src="../../../assets/certs/5.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/6.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/7.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/8.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/9.jpg" alt="certyfikat">
+                </div>
+
+                <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
+                    <img src="../../../assets/certs/10.jpg" alt="certyfikat">
+                </div>
+
             </div>
 
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/1.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/2.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/3.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/4.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]"  style="z-index: 10;">
-                <img src="../../../assets/certs/5.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/6.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/7.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/8.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/9.jpg" alt="certyfikat">
-            </div>
-
-            <div class="cert-wrapper absolute w-full h-full flex justify-center items-center bg-[#a90269]">
-                <img src="../../../assets/certs/10.jpg" alt="certyfikat">
-            </div>
+            <button class="select-none text-8xl opacity-50 hover:opacity-100 p-2 m-0 transition-transform duration-500 hover:scale-125 h-full sm:text-5xl text-white" (click)="slideRight(0.65)">></button>
 
         </div>
 
-        <button class="select-none text-8xl opacity-50 hover:opacity-100 p-2 m-0 transition-transform duration-300 hover:scale-125 h-full sm:text-5xl text-white" (click)="slideRight()">></button>
+        <div class="flex justify-center items-center mt-5">
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(0)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(1)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(2)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(3)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(4)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-100 mx-1.5" style="scale: 1.15;" (click)="goToCertButtonClicked(5)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(6)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(7)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(8)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(9)"></button>
+            <button class="transition-all duration-500 go-to-cert-button w-[8%] h-3 bg-white rounded-xl opacity-25 mx-1.5" (click)="goToCertButtonClicked(10)"></button>
+        </div>
 
     </div>
+
+
 
 </section>
 
