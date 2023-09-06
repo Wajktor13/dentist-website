@@ -1,5 +1,4 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Carousel, initTE } from 'tw-elements';
 
 
 @Component({
@@ -12,6 +11,5 @@ export class AppComponent implements AfterViewInit {
   title = 'dentist-website';
   
   public ngAfterViewInit() {
-    initTE({ Carousel });
   }
 }
