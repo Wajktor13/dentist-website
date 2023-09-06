@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export const content = [
-  "./src/**/*.{html,ts}",
-  "./node_modules/tw-elements/dist/js/**/*.js"
+  "./src/**/*.{html,ts}"
 ];
+
 export const theme = {
   extend: {},
   screens: {
@@ -10,8 +10,8 @@ export const theme = {
     'md': { 'max': '800px' },
     'lg': { 'max': '1024px' },
     'xl': { 'max': '1280px' },
-    '2xl': { 'max': '1536px' },
+    '2xl': { 'max': '1536px' }
   }
 };
+
 export const darkMode = "class";
-export const plugins = [require("tw-elements/dist/plugin.cjs")];
