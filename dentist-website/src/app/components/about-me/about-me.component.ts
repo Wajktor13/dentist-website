@@ -9,31 +9,26 @@ import { Subscription, interval } from 'rxjs';
 })
 
 export class AboutMeComponent implements OnInit, OnDestroy {
-    public imagesUrls: string[] = ["assets/clinic/0.jpg", "assets/clinic/1.jpg", "assets/clinic/2.jpg", "assets/clinic/3.jpg", "assets/clinic/4.jpg"];
-    public images: HTMLImageElement[] = [];
     public currentImageIndex: number = 0;
     private intervalTime: number = 4500;
     private changeBackgroundSub: Subscription | null = null;
+    private imageDivs: HTMLDivElement[] | null = null;
 
     public ngOnInit(): void {
-        this.loadImages();
-
-        this.changeBackgroundSub = interval(this.intervalTime).subscribe(_ => this.currentImageIndex = (this.currentImageIndex + 1) % this.imagesUrls.length);
+        this.imageDivs = Array.from(document.querySelectorAll(".background-div")) as HTMLDivElement[];
+        this.changeBackgroundSub = interval(this.intervalTime).subscribe(() => this.changeBackground());
     }
 
     public ngOnDestroy(): void {
         this.changeBackgroundSub?.unsubscribe();
     }
 
-    public getCurrentImageUrl(): string {
-        return this.imagesUrls[this.currentImageIndex];
-    }
+    private changeBackground(): void {
+        let newImageIndex = (this.currentImageIndex + 1) % this.imageDivs!.length;
 
-    private loadImages(): void{
-        for(let i=0; i < this.imagesUrls.length; i++){
-            let img = new Image();
-            img.src = this.imagesUrls[i];
-            this.images.push(img);
-        }
+        this.imageDivs![this.currentImageIndex].style.opacity = "0";
+        this.imageDivs![newImageIndex].style.opacity = "1";
+
+        this.currentImageIndex = newImageIndex;
     }
 }
