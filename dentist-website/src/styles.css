@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "aos/dist/aos.css";
+
 * {
     -webkit-tap-highlight-color: transparent;
 }
