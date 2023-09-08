@@ -8,6 +8,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { CertificatesSectionComponent } from './components/certificates-section/certificates-section.component';
 import { ServicesSectionComponent } from './components/services-section/services-section.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ServicesSectionComponent } from './components/services-section/services
         NavigationComponent,
         AboutMeComponent,
         CertificatesSectionComponent,
-        ServicesSectionComponent
+        ServicesSectionComponent,
+        GalleryComponent
     ],
     imports: [
         BrowserModule,
