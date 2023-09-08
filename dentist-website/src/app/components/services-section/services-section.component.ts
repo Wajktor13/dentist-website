@@ -1,5 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import VanillaTilt from "vanilla-tilt"
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -10,17 +9,7 @@ import VanillaTilt from "vanilla-tilt"
 
 export class ServicesSectionComponent implements OnInit {
 
-    constructor (
-        private elRef: ElementRef
-        ) { }
+    constructor () { }
 
-    ngOnInit() {
-        VanillaTilt.init(
-            this.elRef.nativeElement.querySelectorAll(".service-tile"), 
-            {   max: 25,
-                speed: 400,
-                scale: 1.05,
-                glare: true
-            });
-        }
+    ngOnInit() { }
 }
