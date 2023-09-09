@@ -1,0 +1,12 @@
+<section class="bg-[#a90269]">
+    
+    <h1 class="text-white text-8xl lg:text-[9vw] font-bold text-center opacity-70 m-10 lg:m-2"   data-aos="fade-right" data-aos-duration="1000">GALERIA</h1>
+
+    <div class="flex flex-wrap justify-center items-center">
+
+        <div *ngFor="let i of numbers" class="m-10 cursor-pointer">
+            <img src="../../../assets/clinic/reduced/{{i}}.webp" alt="obraz z galerii" loading="lazy" (click)="galleryImageClicked($event)">
+        </div>
+
+    </div>
+</section>
