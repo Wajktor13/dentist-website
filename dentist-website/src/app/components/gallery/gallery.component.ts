@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 
 export class GalleryComponent {
+    public fullGallery: boolean = false;
     private noImages: number = 15;
     public numbers: number[];
 
@@ -17,5 +18,9 @@ export class GalleryComponent {
 
     public galleryImageClicked(event: Event){
         console.log((event.target as HTMLImageElement).src);
+    }
+
+    public toggleFullGallery(): void {
+        this.fullGallery = !this.fullGallery;
     }
 }
