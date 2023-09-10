@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class GalleryComponent implements OnInit {
     public showFullGallery: boolean = false;
     public fullPhotoView: boolean = false;
-    private noImages: number = 15;
+    private noImages: number = 14;
     public numbers: number[];
     public fullImgSrc: string = "";
 
