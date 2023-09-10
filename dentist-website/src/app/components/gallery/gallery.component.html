@@ -5,7 +5,7 @@
 
         <div class="flex flex-wrap justify-center items-center">
     
-            <div *ngFor="let i of numbers" class="m-10 cursor-pointer shadow-lg shadow-neutral-800 hover:scale-[1.08]" data-aos="flip-up" data-aos-offset="150" data-aos-duration="500">
+            <div *ngFor="let i of numbers" class="m-10 cursor-pointer shadow-lg shadow-neutral-800 hover:scale-[1.08]" data-aos="flip-up" data-aos-offset="120" data-aos-duration="500">
                 <img src="../../../assets/clinic/reduced/{{i}}.webp" alt="obraz z galerii" loading="lazy" (click)="galleryPhotoClicked($event)" class="rounded-lg">
             </div>
     
@@ -21,13 +21,13 @@
 
 <div class="fixed left-0 top-0 w-[100vw] min-w-[250px] h-[100vh] bg-[#a90269] bg-opacity-80 z-30" *ngIf="fullPhotoView">
 
-    <div class="w-full h-full relative flex flex-col justify-evenly items-center">
+    <div class="w-full h-full relative flex flex-col justify-evenly items-center mt-10 pb-14 pt-3">
 
-        <img id="full-gallery-img" src="{{fullPhotoSrc}}" alt="obraz z galerii" class="w-[90%] z-30 shadow-xl shadow-neutral-900 rounded-xl max-w-[1600px]">
+        <img id="full-gallery-img" src="{{fullPhotoSrc}}" alt="obraz z galerii" class="z-30 shadow-xl shadow-neutral-900 rounded-xl max-w-[90%] max-h-[85%]">
 
-        <div class="loader absolute top-[36%] w-[100px] h-[100px] lg:w-[30px] lg:h-[30px]"></div>
+        <div class="loader absolute top-[32%] w-[20vh] h-[20vh] max-h-[100px] max-w-[100px] lg:w-[30px] lg:h-[30px]"></div>
 
-        <img src="../../../assets/exit_menu.webp" alt="wyjdź z menu" class="w-11 cursor-pointer animate-pulse duration-300 hover:scale-125" (click)="toggleFullPhotoView()">
+        <img src="../../../assets/exit_menu.webp" alt="wyjdź z menu" class="w-11 cursor-pointer animate-pulse duration-300 hover:scale-125 z-40 mt-2" (click)="toggleFullPhotoView()">
 
     </div>
 
