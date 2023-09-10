@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,20 +7,31 @@ import { Component } from '@angular/core';
     styleUrls: ['./gallery.component.css']
 })
 
-export class GalleryComponent {
-    public fullGallery: boolean = false;
+export class GalleryComponent implements OnInit {
+    public showFullGallery: boolean = false;
+    public fullPhotoView: boolean = false;
     private noImages: number = 15;
     public numbers: number[];
+    public fullImgSrc: string = "";
 
     constructor() {
         this.numbers = Array(this.noImages).fill(0).map((_, i)=>i);
     }
 
+    ngOnInit(): void {
+    }
+
     public galleryImageClicked(event: Event){
-        console.log((event.target as HTMLImageElement).src);
+        this.toggleFullPhotoView();
+
+        this.fullImgSrc = ("../../.." + ((event.target as HTMLImageElement).src).slice(21)).replace("reduced", "full");
     }
 
     public toggleFullGallery(): void {
-        this.fullGallery = !this.fullGallery;
+        this.showFullGallery = !this.showFullGallery;
+    }
+
+    public toggleFullPhotoView(): void {
+        this.fullPhotoView = !this.fullPhotoView;
     }
 }

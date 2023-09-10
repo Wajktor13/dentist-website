@@ -1,11 +1,11 @@
 <section class="relative mb-96">
 
-    <div class="bg-[#a90269] overflow-hidden pb-10" [ngClass]="{'max-h-[500px]': !fullGallery, 'max-h-full': fullGallery}">
+    <div class="bg-[#a90269] overflow-hidden pb-10" [ngClass]="{'max-h-[500px]': !showFullGallery, 'max-h-full': showFullGallery}">
         <h1 class="text-white text-8xl lg:text-[9vw] font-bold text-center opacity-70 m-10 lg:m-2"   data-aos="fade-right" data-aos-duration="1000">GALERIA</h1>
 
         <div class="flex flex-wrap justify-center items-center">
     
-            <div *ngFor="let i of numbers" class="m-10 cursor-pointer shadow-lg shadow-neutral-800" data-aos="flip-up" data-aos-offset="200" data-aos-duration="600">
+            <div *ngFor="let i of numbers" class="m-10 cursor-pointer shadow-lg shadow-neutral-800 hover:scale-[1.08]" data-aos="flip-up" data-aos-offset="200" data-aos-duration="500">
                 <img src="../../../assets/clinic/reduced/{{i}}.webp" alt="obraz z galerii" loading="lazy" (click)="galleryImageClicked($event)" class="rounded-lg">
             </div>
     
@@ -13,8 +13,22 @@
     </div>
     
     <button class="absolute bottom-[-50px] left-0 right-0 mx-auto text-center bg-[#a90269] select-none w-[150px] h-[50px] text-xl text-white rounded-b-xl" (click)="toggleFullGallery()">
-        <p *ngIf="!fullGallery">↓ ROZWIŃ ↓</p>
-        <p *ngIf="fullGallery">↑ ZWIŃ ↑</p>
+        <p *ngIf="!showFullGallery">↓ ROZWIŃ ↓</p>
+        <p *ngIf="showFullGallery">↑ ZWIŃ ↑</p>
     </button>
 
 </section>
+
+<div class="fixed left-0 top-0 w-[100vw] min-w-[250px] h-[100vh] bg-[#a90269] bg-opacity-80 z-30" *ngIf="fullPhotoView">
+
+    <div class="w-full h-full relative flex flex-col justify-evenly items-center">
+
+        <img id="full-gallery-img" src="{{fullImgSrc}}" alt="obraz z galerii" class="w-[90%] z-30 shadow-xl shadow-neutral-900 rounded-xl max-w-[1600px]">
+
+        <div class="loader absolute top-[36%] w-[100px] h-[100px] lg:w-[30px] lg:h-[30px]"></div>
+
+        <img src="../../../assets/exit_menu.png" alt="wyjdź z menu" class="w-11 cursor-pointer animate-pulse duration-300 hover:scale-125" (click)="toggleFullPhotoView()">
+
+    </div>
+
+</div>
