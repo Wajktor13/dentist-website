@@ -12,7 +12,7 @@ export class GalleryComponent implements OnInit {
     public fullPhotoView: boolean = false;
     private noImages: number = 14;
     public numbers: number[];
-    public fullImgSrc: string = "";
+    public fullPhotoSrc: string = "";
 
     constructor() {
         this.numbers = Array(this.noImages).fill(0).map((_, i)=>i);
@@ -21,10 +21,11 @@ export class GalleryComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    public galleryImageClicked(event: Event){
+    public galleryPhotoClicked(event: Event){
         this.toggleFullPhotoView();
 
-        this.fullImgSrc = ("../../.." + ((event.target as HTMLImageElement).src).slice(21)).replace("reduced", "full");
+        let photoNumber: string = ((event.target as HTMLImageElement).src).slice(-10).replace(/\D/g,'');
+        this.fullPhotoSrc = `../../../assets/clinic/full/${photoNumber}.webp`;
     }
 
     public toggleFullGallery(): void {

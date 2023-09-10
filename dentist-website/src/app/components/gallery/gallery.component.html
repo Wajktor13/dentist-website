@@ -6,7 +6,7 @@
         <div class="flex flex-wrap justify-center items-center">
     
             <div *ngFor="let i of numbers" class="m-10 cursor-pointer shadow-lg shadow-neutral-800 hover:scale-[1.08]" data-aos="flip-up" data-aos-offset="150" data-aos-duration="500">
-                <img src="../../../assets/clinic/reduced/{{i}}.webp" alt="obraz z galerii" loading="lazy" (click)="galleryImageClicked($event)" class="rounded-lg">
+                <img src="../../../assets/clinic/reduced/{{i}}.webp" alt="obraz z galerii" loading="lazy" (click)="galleryPhotoClicked($event)" class="rounded-lg">
             </div>
     
         </div>
@@ -23,11 +23,11 @@
 
     <div class="w-full h-full relative flex flex-col justify-evenly items-center">
 
-        <img id="full-gallery-img" src="{{fullImgSrc}}" alt="obraz z galerii" class="w-[90%] z-30 shadow-xl shadow-neutral-900 rounded-xl max-w-[1600px]">
+        <img id="full-gallery-img" src="{{fullPhotoSrc}}" alt="obraz z galerii" class="w-[90%] z-30 shadow-xl shadow-neutral-900 rounded-xl max-w-[1600px]">
 
         <div class="loader absolute top-[36%] w-[100px] h-[100px] lg:w-[30px] lg:h-[30px]"></div>
 
-        <img src="../../../assets/exit_menu.png" alt="wyjdź z menu" class="w-11 cursor-pointer animate-pulse duration-300 hover:scale-125" (click)="toggleFullPhotoView()">
+        <img src="../../../assets/exit_menu.webp" alt="wyjdź z menu" class="w-11 cursor-pointer animate-pulse duration-300 hover:scale-125" (click)="toggleFullPhotoView()">
 
     </div>
 
