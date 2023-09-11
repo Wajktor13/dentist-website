@@ -20,6 +20,7 @@
     "@angular/router": "^16.2.0",
     "@geometricpanda/angular-tilt": "^0.3.0",
     "aos": "^2.3.4",
+    "ol": "^8.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "tw-elements": "^1.0.0-rc.1",
