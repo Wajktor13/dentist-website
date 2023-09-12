@@ -29,7 +29,7 @@ export class ContactSectionComponent implements OnInit {
     marker.setStyle(
       new Style({
         image: new Icon({
-          src: '../../../assets/gps_marker_red.webp',
+          src: '../../../assets/gps_marker_purple.webp',
           scale: 0.18,
         }),
       })
