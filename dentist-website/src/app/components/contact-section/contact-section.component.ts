@@ -9,50 +9,52 @@ import { Icon, Style } from 'ol/style';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 
+
 @Component({
-  selector: 'app-contact-section',
-  templateUrl: './contact-section.component.html',
-  styleUrls: ['./contact-section.component.css'],
+    selector: 'app-contact-section',
+    templateUrl: './contact-section.component.html',
+    styleUrls: ['./contact-section.component.css'],
 })
+
 export class ContactSectionComponent implements OnInit {
-  private map!: Map;
+    private map!: Map;
 
-  public ngOnInit(): void {
-    this.configureMap();
-  }
+    public ngOnInit(): void {
+        this.configureMap();
+    }
 
-  private configureMap() {
-    const marker = new Feature({
-      geometry: new Point(fromLonLat([21.77249, 49.68811])),
-    });
+    private configureMap() {
+        const marker = new Feature({
+        geometry: new Point(fromLonLat([21.77249, 49.68811])),
+        });
 
-    marker.setStyle(
-      new Style({
-        image: new Icon({
-          src: '../../../assets/gps_marker_purple.webp',
-          scale: 0.18,
+        marker.setStyle(
+        new Style({
+            image: new Icon({
+            src: '../../../assets/gps_marker_purple.webp',
+            scale: 0.18,
+            }),
+        })
+        );
+
+        const markerLayer = new VectorLayer({
+        source: new VectorSource({
+            features: [marker],
         }),
-      })
-    );
+        });
 
-    const markerLayer = new VectorLayer({
-      source: new VectorSource({
-        features: [marker],
-      }),
-    });
-
-    this.map = new Map({
-      layers: [
-        new TileLayer({
-          source: new OSM(),
+        this.map = new Map({
+        layers: [
+            new TileLayer({
+            source: new OSM(),
+            }),
+            markerLayer,
+        ],
+        target: 'map',
+        view: new View({
+            center: fromLonLat([21.77247, 49.68803]),
+            zoom: 17.7,
         }),
-        markerLayer,
-      ],
-      target: 'map',
-      view: new View({
-        center: fromLonLat([21.77247, 49.68803]),
-        zoom: 17.7,
-      }),
-    });
-  }
+        });
+    }
 }
