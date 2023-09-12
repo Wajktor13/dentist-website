@@ -2,9 +2,9 @@
 
     <div class="flex justify-center items-center md:flex-col relative h-[112px]">
 
-        <a href="">
+        <div>
             <img src="../../../assets/logo_purple.webp" alt="logo" class="mr-2 object-contain w-28 lg:w-16 hover:animate-pulse cursor-pointer">
-        </a>
+        </div>
 
         <div class="flex flex-col justify-center text-[#a90269] text-2xl font-bold lg:text-base md:text-center">
             <div class="mx-2">
@@ -27,35 +27,35 @@
 
         <div id="menu" class="flex justify-evenly m-0 py-2 text-xl text-center lg:text-lg w-full bg-white z-30 border-b-2 border-black">
 
-            <a href="" class="m-auto group text-[#a90269] transition duration-500 w-36">
+            <div class="m-auto group text-[#a90269] transition duration-500 w-36 hover:cursor-pointer select-none" (click)="scrollTo('about-me')">
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
                 <p class="p-1">O MNIE</p>
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
-            </a>
+            </div>
 
-            <a href="" class="m-auto group text-[#a90269] transition duration-500 w-36">
+            <div class="m-auto group text-[#a90269] transition duration-500 w-36 hover:cursor-pointer select-none" (click)="scrollTo('certs-section')">
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
                 <p class="p-1">CERTYFIKATY</p>
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
-            </a>
+            </div>
 
-            <a href="" class="m-auto group text-[#a90269] transition duration-500 w-36">
+            <div class="m-auto group text-[#a90269] transition duration-500 w-36 hover:cursor-pointer select-none" (click)="scrollTo('services-section')">
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
                 <p class="p-1">OFERTA</p>
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
-            </a>
+            </div>
 
-            <a href="" class="m-auto group text-[#a90269] transition duration-500 w-36">
+            <div class="m-auto group text-[#a90269] transition duration-500 w-36 hover:cursor-pointer select-none" (click)="scrollTo('gallery')">
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
                 <p class="p-1">GALERIA</p>
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
-            </a>
+            </div>
 
-            <a href="" class="m-auto group text-[#a90269] transition duration-500 w-36">
+            <div class="m-auto group text-[#a90269] transition duration-500 w-36 hover:cursor-pointer select-none" (click)="scrollTo('contact-section')">
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
                 <p class="p-1">KONTAKT</p>
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#a90269]"></span>
-            </a>
+            </div>
 
         </div>
 
@@ -63,23 +63,23 @@
 
     <div class="flex flex-col w-[100%] min-w-[250px] h-[100vh] bg-[#a90269] bg-opacity-80 pb-36 z-30 fixed pt-10" [ngClass]="{'hidden': !showMobileMenu}">
 
-        <a href="" class="m-auto text-white text-xl transition duration-300 hover:scale-125">O MNIE</a>
+        <div class="m-auto text-white text-xl transition duration-300 hover:scale-125" (click)="scrollToAndExitMenu('about-me')">O MNIE</div>
 
         <hr class="w-1/2 min-w-[180px] h-1 mx-auto my-4 bg-white border-0">
 
-        <a href="" class="m-auto text-white text-xl transition duration-300 hover:scale-125">CERTYFIKATY</a>
+        <div class="m-auto text-white text-xl transition duration-300 hover:scale-125" (click)="scrollToAndExitMenu('certs-section')">CERTYFIKATY</div>
 
         <hr class="w-1/2 min-w-[180px] h-1 mx-auto my-4 bg-white border-0">
 
-        <a href="" class="m-auto text-white text-xl transition duration-300 hover:scale-125">OFERTA</a>
+        <div class="m-auto text-white text-xl transition duration-300 hover:scale-125" (click)="scrollToAndExitMenu('services-section')">OFERTA</div>
 
         <hr class="w-1/2 min-w-[180px] h-1 mx-auto my-4 bg-white border-0">
 
-        <a href="" class="m-auto text-white text-xl transition duration-300 hover:scale-125">GALERIA</a>
+        <div class="m-auto text-white text-xl transition duration-300 hover:scale-125" (click)="scrollToAndExitMenu('gallery')">GALERIA</div>
 
         <hr class="w-1/2 min-w-[180px] h-1 mx-auto my-4 bg-white border-0">
 
-        <a href="" class="m-auto text-white text-xl transition duration-300 hover:scale-125">KONTAKT</a>
+        <div class="m-auto text-white text-xl transition duration-300 hover:scale-125" (click)="scrollToAndExitMenu('contact-section')">KONTAKT</div>
 
         <hr class="w-1/2 min-w-[180px] h-1 mx-auto my-4 bg-white border-0">
 

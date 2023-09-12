@@ -35,4 +35,30 @@ export class NavigationComponent implements OnInit {
             this.menu.style.top = "0";
         }
     }
+
+    public async scrollTo(elementID: string): Promise<void> {
+        window.location.href = `#${elementID}`;
+    
+        await new Promise<void>((resolve) => {
+            const checkScrollInterval = setInterval(() => {
+                if (window.location.hash === `#${elementID}`) {
+                    clearInterval(checkScrollInterval);
+                    resolve();
+                }
+            }, 10);
+        });
+    
+        const yOffset = -150;
+        const element = document.getElementById(elementID);
+        
+        if (element) {
+            const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    }
+
+    public scrollToAndExitMenu(elementID: string) {
+        this.scrollTo(elementID);
+        this.toggleMobileMenu();
+    }
 }
