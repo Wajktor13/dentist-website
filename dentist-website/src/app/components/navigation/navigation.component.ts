@@ -22,7 +22,7 @@ export class NavigationComponent implements OnInit {
     }
 
     @HostListener("window:scroll") 
-    public onWindowScroll() {
+    public onWindowScroll(): void {
         
         if (window.scrollY >= this.breakpoint && !this.menuFixed && this.menu != null) {
             this.menuFixed = true;
@@ -57,8 +57,12 @@ export class NavigationComponent implements OnInit {
         }
     }
 
-    public scrollToAndExitMenu(elementID: string) {
+    public scrollToAndExitMenu(elementID: string): void {
         this.scrollTo(elementID);
         this.toggleMobileMenu();
+    }
+
+    public scrollUp(): void {
+        window.scroll({top: 0, left: 0, behavior: 'smooth'});
     }
 }
