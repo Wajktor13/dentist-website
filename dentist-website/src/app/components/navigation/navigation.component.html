@@ -61,7 +61,7 @@
 
     </div>
 
-    <div class="flex flex-col w-[100%] min-w-[250px] h-[100vh] bg-[#a90269] bg-opacity-80 pb-36 z-30 fixed pt-10" [ngClass]="{'hidden': !showMobileMenu}">
+    <div class="flex flex-col w-[100%] min-w-[250px] h-[100vh] bg-[#a90269] bg-opacity-80 pb-36 z-40 fixed pt-10" [ngClass]="{'hidden': !showMobileMenu}">
 
         <div class="m-auto text-white text-xl transition duration-300 hover:scale-125" (click)="scrollToAndExitMenu('about-me')">O MNIE</div>
 
@@ -85,6 +85,10 @@
 
         <img src="../../../assets/exit_menu.webp" alt="wyjdź z menu" class="m-auto w-11 cursor-pointer animate-pulse duration-300 hover:scale-125" (click)="toggleMobileMenu()">
 
+    </div>
+
+    <div class="fixed z-30 w-20 h-20 animate-bounce top-[90%] left-[92%] cursor-pointer lg:left-[78%]" (click)="scrollUp()">
+        <img src="../../../assets/arrow.webp" alt="strzałka">
     </div>
     
 </nav>
