@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 
 
 @Component({
@@ -9,12 +9,19 @@ import { Component, HostListener, OnInit } from '@angular/core';
 
 export class NavigationComponent implements OnInit {
     public showMobileMenu: boolean = false;
-    private breakpoint: number = 108; 
+    private menuFixedBreakpoint: number = 108; 
     private menuFixed: boolean = false;
     private menu: HTMLDivElement | null = null;
+    private sections!: HTMLElement[];
+    private navTiles!: HTMLDivElement[];
+    private selectedNavTile!: HTMLDivElement;
+
+    constructor () { }
 
     public ngOnInit(): void {
         this.menu = document.getElementById("menu") as HTMLDivElement;
+        this.sections = Array.from(document.querySelectorAll('section'));
+        this.navTiles = Array.from(document.querySelectorAll('.nav-tile'));
     }
 
     public toggleMobileMenu(): void{
@@ -23,13 +30,17 @@ export class NavigationComponent implements OnInit {
 
     @HostListener("window:scroll") 
     public onWindowScroll(): void {
-        
-        if (window.scrollY >= this.breakpoint && !this.menuFixed && this.menu != null) {
+        this.updateFixedMenu();
+        this.updateNav();
+    }
+
+    private updateFixedMenu(): void {
+        if (window.scrollY >= this.menuFixedBreakpoint && !this.menuFixed && this.menu != null) {
             this.menuFixed = true;
             this.menu.style.position = "fixed";
             this.menu.style.top = "35px";
 
-        } else if (window.scrollY < this.breakpoint && this.menuFixed && this.menu != null) {
+        } else if (window.scrollY < this.menuFixedBreakpoint && this.menuFixed && this.menu != null) {
             this.menuFixed = false;
             this.menu.style.position = "relative";
             this.menu.style.top = "0";
@@ -64,5 +75,34 @@ export class NavigationComponent implements OnInit {
 
     public scrollUp(): void {
         window.scroll({top: 0, left: 0, behavior: 'smooth'});
+    }
+
+    private updateNav(): void {
+        let currentScrollY: number = window.scrollY;
+        let offset: number = 280;
+
+        for (let i = 0; i < this.sections.length; i++){
+            if ((i < this.sections.length - 1 && (currentScrollY + offset >= this.sections[i].offsetTop && currentScrollY + offset < this.sections[i+1].offsetTop)) 
+            || (i === this.sections.length - 1&& currentScrollY + offset >= this.sections[i].offsetTop)){
+                this.selectNewNavTile(i);
+            }
+        }
+    }
+
+    private unselectCurrentNavTile(): void {
+        let spans: HTMLSpanElement[];
+
+        if (this.selectedNavTile != undefined) {
+            spans = Array.from(this.selectedNavTile.querySelectorAll('span'));
+            spans.map(span => span.classList.remove('max-w-full'));
+        }
+    }
+
+    private selectNewNavTile(newNavTileIndex: number): void {
+        let spans: HTMLSpanElement[];
+        this.unselectCurrentNavTile();
+        this.selectedNavTile = this.navTiles[newNavTileIndex];
+        spans = Array.from(this.selectedNavTile.querySelectorAll('span'));
+        spans.map(span => span.classList.add('max-w-full'));
     }
 }
