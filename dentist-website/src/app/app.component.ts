@@ -17,6 +17,9 @@ export class AppComponent implements OnInit {
     ) { }
     
     ngOnInit(): void {
+        
+        window.addEventListener('load', AOS.refresh);
+
         this.router.events.subscribe((event) => {
           if (event instanceof NavigationEnd) {
             AOS.init();
