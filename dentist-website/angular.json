@@ -27,7 +27,8 @@
                 "glob": "_redirects",
                 "input": "src",
                 "output": "/"
-              }
+              },
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.css",
