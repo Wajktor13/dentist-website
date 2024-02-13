@@ -13,7 +13,7 @@ My first commercial project - website for a dentsit.
 ![CSS3](https://img.shields.io/static/v1?style=for-the-badge&message=CSS3&color=1572B6&logo=CSS3&logoColor=FFFFFF&label=)
 ![Tailwind CSS](https://img.shields.io/static/v1?style=for-the-badge&message=Tailwind+CSS&color=222222&logo=Tailwind+CSS&logoColor=06B6D4&label=)
 
-## Live Demo
+## Live
 https://agnieszka-zacharjasz-wilkusz.netlify.app
 <br>
 https://jerzywilkusz.netlify.app
