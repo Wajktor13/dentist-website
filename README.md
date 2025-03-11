@@ -3,7 +3,7 @@
 ![image](https://github.com/Wajktor13/dentist-website/assets/76243064/fcbcdbc1-260d-4905-ba5c-f5a6128aad86)
 
 
-My first commercial project - website for a dentsit.
+My first commercial project - website for a dentist.
 
 ## Technologies used
 
